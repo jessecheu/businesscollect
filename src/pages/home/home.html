@@ -1,4 +1,35 @@
+
 <ion-header>
+  <ion-navbar>
+    <ion-title class="headertitle">
+     <b>DATABASE_NAME <br> Storage & Organizer</b>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="row">
+  <h1 class="sheettitle">DATABASE NAME </h1> 
+
+      <ion-buttons class="renamesheettitle">
+          <button ion-button icon-only (click)="addItem()"><ion-icon name="ios-brush-outline"></ion-icon></button>
+      </ion-buttons>
+
+      <ion-buttons class="settings">
+          <button ion-button icon-only (click)="addItem()"><ion-icon name="ios-settings-outline"></ion-icon></button>
+      </ion-buttons>
+
+</div>
+  <p>
+    An example Text
+  </p>
+  <table style="width:100%">
+    
+  </table>
+</ion-content>
+
+
+<!-----<ion-header>
   <ion-navbar>
     <ion-title>
       Hello Firebase
@@ -30,3 +61,4 @@
     </ion-item-sliding>
   </ion-list>
 </ion-content>
+---->
