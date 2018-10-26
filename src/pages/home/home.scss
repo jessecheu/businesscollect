@@ -14,8 +14,36 @@ page-home {
     position:absolute; left:225px;
 }
 .spreadsheet{
-    background-color:#e74c3c;
-    border:1px solid black;
     text-align: left;
+    width:70%
+}
+.spreadsheet, th, td{
+    padding: 1px;
+    background-color:#e74c3c;
+    border: 1px solid black;
+    border-collapse: collapse;   
+}
+.th, td{
+    text-align: left;
+}
+.column00{
+    width: 2%;
+    text-align: center;
+    padding: 0px;
+    background-color: #fafafafa;
+}
+.column{
+    width: 2%;
+    text-align: center;
+    padding: 40px;
+    background-color: #666666;
+}
+.columnrest{
+    width: 200px;
+    table-layout: auto;
+    text-align: center;
+    padding: 35px;
+    background-color: #999999;
+    
 }
 }

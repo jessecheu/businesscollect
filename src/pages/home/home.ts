@@ -10,11 +10,19 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  animals: Observable<any[]>;
-  constructor(public navCtrl: NavController, public firebaseProvider: FirebaseStoreProvider, public alertCtrl: AlertController) {
+ // animals: Observable<any[]>;
+  constructor(public navCtrl: NavController){
+    
+    /*, public firebaseProvider: FirebaseStoreProvider, public alertCtrl: AlertController) {
     this.animals = firebaseProvider.listAnimals();
-  }
-
+    */}
+    ionViewDidLoad() {
+      console.log('ionViewDidLoad HomePage');
+    }
+openSettings(){
+  this.navCtrl.push("SettingspagePage");
+}
+/*
   addAnimals(){
     let prompt = this.alertCtrl.create({
       title: 'Add a animal',
@@ -111,4 +119,5 @@ export class HomePage {
     });
     prompt.present();
   }  
+  */
 }
