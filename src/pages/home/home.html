@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content padding>
-  <div class="row">
+<div class="row">
   <h1 class="sheettitle">DATABASE NAME </h1> 
 
       <ion-buttons class="renamesheettitle">
@@ -18,8 +18,19 @@
       <ion-buttons class="settings">
           <button ion-button icon-only (click)="openSettings()"><ion-icon name="ios-settings-outline"></ion-icon></button>
       </ion-buttons>
-
+    
+      <label class="itemselect">
+   <!-----   <div class="input-label">Colour</div> ----->
+          <select>
+            <option><b>DATABASE NAME 1</b></option>
+            <option>DATABASE NAME 2</option>
+            <option>DATABASE NAME 3</option>
+          </select>
+        
+        </label>
+        
 </div>
+
 <p>
    
 </p>
@@ -70,38 +81,3 @@
     </tr>
   </table>
 </ion-content>
-
-
-<!-----<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Hello Firebase
-      <ion-buttons end>
-        <button ion-button icon-only (click)="addAnimals()">
-          <ion-icon name="add"></ion-icon>
-        </button>
-      </ion-buttons>
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <ion-list>
-    <ion-item-sliding *ngFor="let animal of animals | async">
-      <ion-item>
-        {{animal.color}}
-        <br>
-        {{animal.year}}
-      </ion-item>
-      <ion-item-options>
-          <button ion-button icon-only light (click)="updateAnimal(animal)">
-              <ion-icon name="paper"></ion-icon>
-            </button>
-        <button ion-button icon-only danger (click)="deleteAnimals(animal.color, animal.id)">
-          <ion-icon name="trash"></ion-icon>
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
-</ion-content>
----->

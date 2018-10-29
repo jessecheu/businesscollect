@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the SettingspagePage page.
+ * Generated class for the Spreadsheet1Page page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,18 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-settingspage',
-  templateUrl: 'settingspage.html',
+  selector: 'page-spreadsheet1',
+  templateUrl: 'spreadsheet1.html',
 })
-export class SettingspagePage {
+export class Spreadsheet1Page {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SettingspagePage');
+    console.log('ionViewDidLoad Spreadsheet1Page');
   }
-openHome(){
-  this.navCtrl.push("Homepage");
-}
+
 }
