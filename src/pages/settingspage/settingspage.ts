@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SettingspagePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { HomePage } from '../home/home'
 
 @IonicPage()
 @Component({
@@ -22,6 +16,6 @@ export class SettingspagePage {
     console.log('ionViewDidLoad SettingspagePage');
   }
 openHome(){
-  this.navCtrl.push("Homepage");
+  this.navCtrl.push(HomePage);
 }
 }

@@ -21,13 +21,14 @@ page-home {
 }
 .spreadsheet{
     text-align: left;
-    width:70%
+
 }
 .spreadsheet, th, td{
     padding: 1px;
     background-color:#e74c3c;
     border: 1px solid black;
     border-collapse: collapse;   
+    overflow: hidden;
 }
 .th, td{
     text-align: left;
@@ -45,7 +46,7 @@ page-home {
     background-color: #666666;
 }
 .columnrest{
-    width: 200px;
+    width: 350px;
     table-layout: auto;
     text-align: center;
     padding: 35px;

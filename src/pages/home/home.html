@@ -9,11 +9,14 @@
 
 <ion-content padding>
 <div class="row">
-  <h1 class="sheettitle">DATABASE NAME </h1> 
-
-      <ion-buttons class="renamesheettitle">
-          <button ion-button icon-only (click)="addItems()"><ion-icon name="ios-brush-outline"></ion-icon></button>
-      </ion-buttons>
+  <ion-list class="sheettitle">
+    <ion-item *ngFor="let i of items" class="sheettitle">
+      {{i}}
+    </ion-item>        
+  </ion-list>  
+ <ion-buttons class="renamesheettitle">
+      <button ion-button icon-only light (click)="editItem(i)"><ion-icon name="ios-brush-outline"></ion-icon></button>
+  </ion-buttons>
 
       <ion-buttons class="settings">
           <button ion-button icon-only (click)="openSettings()"><ion-icon name="ios-settings-outline"></ion-icon></button>
@@ -34,10 +37,11 @@
 <p>
    
 </p>
-  <table class ="spreadsheet" style="width:100%">
+  <table class ="spreadsheet">
     <tr>
       <th class="column00">00</th>
-      <th class="columnrest">A</th>
+      <th class="columnrest">A
+      </th>
       <th class="columnrest">B</th>
       <th class="columnrest">C</th>
       <th class="columnrest">D</th>
@@ -51,6 +55,9 @@
     </tr>
     <tr>
       <td class="column">1</td>
+      <td *ngFor="let i of cells">
+        {{i}}       
+      </td>
     </tr>
     <tr>
       <td class="column">2</td>
