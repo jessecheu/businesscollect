@@ -13,8 +13,9 @@ import { Observable } from 'rxjs/rx';
 export class HomePage {
   cells: any;
   items: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController){
-  this.cells=[123567891235678912,2,3,4,5];  
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public firebaseProvider: FirebaseStoreProvider){
+    this.movies = firebaseProvider.listMovies(); 
+  this.cells=[1,2,3,4,5];  
   this.items = [
    "DATABASE_NAME",
   ];
@@ -38,11 +39,12 @@ editItem(item){
       {
         text: 'Save',
           handler: data => {
-            let index = this.items.indexOf(item);
+            this.items[this.items.length] = item
+          //  let index = this.items.indexOf(item);
  
-            if(index > -1){
-              this.items[index] = data.name;
-            }
+         /*   if(index > -1){
+              this.items[index] = data.name; 
+            } */
         }
        }
      ]
