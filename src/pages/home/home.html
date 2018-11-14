@@ -28,8 +28,10 @@
             <option><b>DATABASE NAME 1</b></option>
             <option>DATABASE NAME 2</option>
             <option>DATABASE NAME 3</option>
-          </select>
-        
+          </select>         
+          <ion-buttons class="createsheets">
+              <button ion-button icon-only (click)="createsheets"><ion-icon name="ios-settings-outline"></ion-icon></button>
+          </ion-buttons>
         </label>
         
 </div>
@@ -39,8 +41,15 @@
 </p>
   <table class ="spreadsheet">
     <tr>
-      <th class="column00">00</th>
-      <th class="columnrest">A
+      <th class="column00">Input DATA
+          <ion-buttons>
+              <button ion-button icon-only light (click)="adddata"><ion-icon name="md-add-circle"></ion-icon></button>
+          </ion-buttons>
+      </th>
+      <th class="columnrest">The first column example title
+          <ion-buttons>
+              <button ion-button icon-only light (click)="adddata"><ion-icon name="md-add-circle"></ion-icon></button>
+          </ion-buttons>
       </th>
       <th class="columnrest">B</th>
       <th class="columnrest">C</th>
@@ -54,7 +63,11 @@
       <th class="columnrest">K</th>
     </tr>
     <tr>
-      <td class="column">1</td>
+      <td class="column">1
+          <ion-buttons>
+              <button ion-button icon-only light (click)="editrow"><ion-icon name="md-add-circle"></ion-icon></button>
+          </ion-buttons>
+      </td>
       <td *ngFor="let i of cells">
         {{i}}       
       </td>

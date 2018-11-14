@@ -14,7 +14,7 @@ export class HomePage {
   cells: any;
   items: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController){
-  this.cells=[123567891235678912356789,2,3,4,5];  
+  this.cells=[123567891235678912,2,3,4,5];  
   this.items = [
    "DATABASE_NAME",
   ];
