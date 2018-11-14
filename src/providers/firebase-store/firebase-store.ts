@@ -9,6 +9,11 @@ export class FirebaseStoreProvider {
   constructor(public afs: AngularFirestore) {
     console.log('Hello FirebaseStoreProvider Provider');
   }
+  listMovies(){
+    return this.afs.collection('/movies').valueChanges();
+  }
+
+
 
   listAnimals(){
     return this.afs.collection('/animals').snapshotChanges().pipe(

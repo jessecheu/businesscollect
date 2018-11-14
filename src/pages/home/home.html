@@ -10,8 +10,8 @@
 <ion-content padding>
 <div class="row">
   <ion-list class="sheettitle">
-      <ion-item *ngFor="let i of items" class="sheettitle">
-          {{i}}
+      <ion-item class="sheettitle" *ngFor="let movie of movies | async">{{movie.title}}
+          
     </ion-item>        
   </ion-list>  
  <ion-buttons class="renamesheettitle">
