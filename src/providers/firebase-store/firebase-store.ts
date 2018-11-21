@@ -9,42 +9,10 @@ export class FirebaseStoreProvider {
   constructor(public afs: AngularFirestore) {
     console.log('Hello FirebaseStoreProvider Provider');
   }
-  listMovies(){
-    return this.afs.collection('/movies').valueChanges();
+  listTitle(){
+    return this.afs.collection('/mains').valueChanges();
   }
-
-
-
-  listAnimals(){
-    return this.afs.collection('/animals').snapshotChanges().pipe(
-      map(actions => actions.map(item => {
-        const id = item.payload.doc.id;
-        const data = item.payload.doc.data();
-        data['id'] = id;
-        return data;
-      }))
-    );
+  updateTitle(id,data){
+    this.afs.doc('/mains/' + id).update(data);
   }
-  deleteAnimal(id){
-    this.afs.doc('/animals/' + id).delete();
-  }
-  addAnimals(value){
-    return new Promise<any>((resolve, reject) => {
-      this.afs.collection('/animals').add({
-        color: value.color,
-        size: value.size,
-        type: value.type,
-        year: parseInt(value.year)
-      })
-      .then(
-        (res) => {
-          resolve(res)
-        },
-          err => reject(err)
-      )
-    })
-   }
-   updateAnimal(id, data){
-    this.afs.doc('/animals/' + id).update(data);
-  }   
 }

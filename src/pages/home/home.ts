@@ -11,14 +11,16 @@ import { Observable } from 'rxjs/rx';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  mains: Observable<any[]>;
   cells: any;
   items: any;
+  item: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public firebaseProvider: FirebaseStoreProvider){
-    this.movies = firebaseProvider.listMovies(); 
+    this.mains = firebaseProvider.listTitle(); 
   this.cells=[1,2,3,4,5];  
-  this.items = [
-   "DATABASE_NAME",
-  ];
+//  this.items = [
+ //  "DATABASE_NAME",
+ // ];
 }
     ionViewDidLoad() {
       console.log('ionViewDidLoad HomePage');
@@ -26,30 +28,29 @@ export class HomePage {
 openSettings(){
   this.navCtrl.push("SettingspagePage");
 }
-editItem(item){ 
+updateTitle(item){
   let prompt = this.alertCtrl.create({
-    title: 'Edit the database title',
-    inputs: [{
-      name: 'name'
-    }],
+    title: 'edit title',
+    message: "Edit title",
+    inputs: [
+      {
+        name: 'title',
+        placeholder: 'Title',
+        value: item.title //<<Cannot read property 'title' of undefined
+      }
+    ],
     buttons: [
       {
         text: 'Cancel'
       },
       {
         text: 'Save',
-          handler: data => {
-            this.items[this.items.length] = item
-          //  let index = this.items.indexOf(item);
- 
-         /*   if(index > -1){
-              this.items[index] = data.name; 
-            } */
+        handler: data => {
+          this.firebaseProvider.updateTitle(item.id, data);
         }
-       }
-     ]
-   });
- 
-   prompt.present();      
+      }
+    ]
+  });
+  prompt.present();
 }
 }
