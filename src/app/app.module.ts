@@ -9,8 +9,13 @@ import { HomePage } from '../pages/home/home';
 import { FirebaseStoreProvider } from '../providers/firebase-store/firebase-store';
 
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environment/environment';
+
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -20,7 +25,7 @@ import { environment } from '../environment/environment';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
