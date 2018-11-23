@@ -24,5 +24,12 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
+  login(){
+
+  }
+
+  register(){
+   this.navCtrl.push('RegisterPage'); 
+  }
 
 }
