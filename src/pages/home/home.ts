@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-import { FirebaseStoreProvider } from '../../providers/firebase-store/firebase-store'
+import { FirebaseStoreProvider } from '../../providers/firebase-store/firebase-store';
 import { AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/rx';
 

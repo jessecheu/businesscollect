@@ -2,7 +2,6 @@
         import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
         import { HomePage } from '../home/home'
         import { AngularFireAuth } from 'angularfire2/auth';
-
         @IonicPage()
         @Component({
           selector: 'page-settingspage',
@@ -35,7 +34,7 @@
           
 
             openHome(){
-              this.navCtrl.push('spreadsheet1page');
+              this.navCtrl.push('Spreadsheet1Page');
           }
           
         }

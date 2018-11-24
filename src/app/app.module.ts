@@ -25,6 +25,7 @@ import { environment } from '../environment/environment';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
@@ -35,8 +36,8 @@ import { environment } from '../environment/environment';
   providers: [
     StatusBar,
     SplashScreen,
+    AngularFirestoreModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FirebaseStoreProvider
   ]
 })
 export class AppModule {}
