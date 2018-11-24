@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar hideBackButton *navbar>
     <ion-title>Register</ion-title>
   </ion-navbar>
 
@@ -24,7 +24,15 @@
           <ion-label floating>Password</ion-label>
           <ion-input type="password" [(ngModel)]="user.password"></ion-input>
         </ion-item>
-      
+
+        <ion-item>
+          <ion-label floating>Secret Passphrase</ion-label>
+          <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+        </ion-item>
+
+
+
+      <button color="light" ion-button (click)="cancel()">CANCEL</button>
       <button ion-button (click)="register(user)">Register</button>
 
       

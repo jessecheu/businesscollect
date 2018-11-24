@@ -1,3 +1,62 @@
 page-spreadsheet1 {
-
-}
+    /**{ 
+        background-color:#f1c40f; 
+    }*/
+    .sheettitle{
+        background-color: #e67e22;
+    }
+    .settings{
+        background-color: #f39c12;
+        position:absolute; right:5px;
+    }
+    .renamesheettitle{
+        background-color: #f39c12;
+        position:absolute; left:225px;
+    }
+    .createsheets{
+        background-color: #f39c12;
+        position: absolute; left:175px;
+        top: -2px;
+    }
+    .itemselect{
+        background-color: #f39c12;
+        position:absolute; left:300px;    
+        border: 1px solid black;
+        padding: 5px;
+    }
+    .spreadsheet{
+        text-align: left;
+    
+    }
+    .spreadsheet, th, td{
+        padding: 1px;
+        background-color:#e74c3c;
+        border: 1px solid black;
+        border-collapse: collapse;   
+        overflow: hidden;
+    }
+    .th, td{
+        text-align: left;
+    }
+    .column00{
+        width: 2%;
+        text-align: center;
+        padding: 0px;
+        background-color: #fafafafa;
+    }
+    .column{
+        width: 2%;
+        text-align: center;
+        padding: 40px;
+        background-color: #666666;
+    }
+    .columnrest{
+        width: 350px;
+        table-layout: auto;
+        text-align: center;
+        padding: 35px;
+        background-color: #999999;
+        
+    }
+    }
+    

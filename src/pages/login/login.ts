@@ -43,7 +43,11 @@ export class LoginPage {
 
 
   register(){
-   this.navCtrl.push('RegisterPage'); 
+   this.navCtrl.setRoot('RegisterPage'); 
+  }
+
+  cancel() {
+    this.navCtrl.push('LoginPage');
   }
 
 }

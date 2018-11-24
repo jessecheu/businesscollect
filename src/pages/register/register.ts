@@ -29,5 +29,9 @@ export class RegisterPage {
     catch (e) {
       console.error(e);
     }
+
+  }
+  cancel() {
+    this.navCtrl.push('LoginPage');
   }
 }

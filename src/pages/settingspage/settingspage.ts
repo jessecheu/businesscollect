@@ -3,7 +3,6 @@
         import { HomePage } from '../home/home'
         import { AngularFireAuth } from 'angularfire2/auth';
 
-
         @IonicPage()
         @Component({
           selector: 'page-settingspage',
@@ -36,7 +35,7 @@
           
 
             openHome(){
-              this.navCtrl.push(HomePage);
+              this.navCtrl.push('spreadsheet1page');
           }
           
         }
