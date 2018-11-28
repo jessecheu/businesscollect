@@ -4,7 +4,7 @@ import { AlertController } from 'ionic-angular';
 import { FirebaseStoreProvider } from '../../providers/firebase-store/firebase-store'
 import { AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/rx';
-
+@IonicPage()
 @Component({
   selector: 'page-spreadsheet1',
   templateUrl: 'spreadsheet1.html'

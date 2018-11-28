@@ -10,12 +10,10 @@
 <ion-content padding>
 <div class="row">
   <ion-list class="sheettitle">
-      <ion-item class="sheettitle" *ngFor="let main of mains | async">{{main.title}}
-          
-    </ion-item>        
+      <ion-item class="sheettitle" *ngFor="let main of mains | async">{{main.title}}</ion-item>        
   </ion-list>  
  <ion-buttons class="renamesheettitle">
-      <button ion-button icon-only light (click)="updateTitle(title)"><ion-icon name="ios-brush-outline"></ion-icon></button>
+      <button ion-button icon-only light (click)="updateTitle(items)"><ion-icon name="ios-brush-outline"></ion-icon></button>
  </ion-buttons>
 
       <ion-buttons class="settings">

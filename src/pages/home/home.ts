@@ -36,7 +36,7 @@ updateTitle(item){
       {
         name: 'title',
         placeholder: 'Title',
-        value: item.title //<<Cannot read property 'title' of undefined
+       // value: item.title //<<Cannot read property 'title' of undefined
       }
     ],
     buttons: [

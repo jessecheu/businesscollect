@@ -1,6 +1,7 @@
         import { Component } from '@angular/core';
         import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-        import { HomePage } from '../home/home'
+        import { HomePage } from '../home/home';
+        import { Spreadsheet1Page } from '../spreadsheet1/spreadsheet1';
         import { AngularFireAuth } from 'angularfire2/auth';
         @IonicPage()
         @Component({
@@ -34,7 +35,7 @@
           
 
             openHome(){
-              this.navCtrl.push('Spreadsheet1Page');
-          }
+              this.navCtrl.push(HomePage);  
+            }
           
-        }
+}

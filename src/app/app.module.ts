@@ -14,8 +14,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environment/environment';
 
-
-
 @NgModule({
   declarations: [
     MyApp,
@@ -26,7 +24,7 @@ import { environment } from '../environment/environment';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,6 +36,7 @@ import { environment } from '../environment/environment';
     SplashScreen,
     AngularFirestoreModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FirebaseStoreProvider,
   ]
 })
 export class AppModule {}
