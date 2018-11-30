@@ -35,7 +35,7 @@
           
 
             openHome(){
-              this.navCtrl.push(HomePage);  
+              this.navCtrl.push('Spreadsheet1Page');  
             }
           
 }

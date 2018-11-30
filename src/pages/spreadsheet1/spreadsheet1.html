@@ -1,6 +1,6 @@
 
 <ion-header>
-  <ion-navbar>
+  <ion-navbar hideBackButton>
     <ion-title class="headertitle">
      <b>DATABASE_NAME <br> Storage & Organizer</b>
     </ion-title>
@@ -10,8 +10,7 @@
 <ion-content padding>
 <div class="row">
   <ion-list class="sheettitle">
-      <ion-item class="sheettitle" *ngFor="let main of mains | async">{{main.title}}
-          
+      <ion-item class="sheettitle" *ngFor="let main of mains | async">{{main.title}}         
     </ion-item>        
   </ion-list>  
  <ion-buttons class="renamesheettitle">
@@ -43,10 +42,13 @@
     <tr>
       <th class="column00">Input DATA
           <ion-buttons>
-              <button ion-button icon-only light (click)="adddata"><ion-icon name="md-add-circle"></ion-icon></button>
+              <button ion-button icon-only light (click)="addData()"><ion-icon name="md-add-circle"></ion-icon></button>
           </ion-buttons>
       </th>
-      <th class="columnrest">The first column example title
+      <th class="columnrest">
+          <ion-item class="sheettitle" *ngFor="let data of datas | async">{{data.title}}          
+            </ion-item> 
+                    
           <ion-buttons>
               <button ion-button icon-only light (click)="adddata"><ion-icon name="md-arrow-dropup-circle"></ion-icon></button>
           </ion-buttons>

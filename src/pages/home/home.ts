@@ -54,6 +54,6 @@ updateTitle(item){
   prompt.present();
 }
   openSpreadsheet1(){
-    
+    this.navCtrl.push('Spreadsheet1Page');
   }
 }

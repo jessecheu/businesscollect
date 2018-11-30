@@ -11,15 +11,15 @@ import { Observable } from 'rxjs/rx';
 })
 export class Spreadsheet1Page {
   mains: Observable<any[]>;
+  datas: Observable<any[]>;
   cells: any;
   items: any;
   item: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public firebaseProvider: FirebaseStoreProvider){
     this.mains = firebaseProvider.listTitle(); 
-  this.cells=[1,2,3,4,5];  
-//  this.items = [
- //  "DATABASE_NAME",
- // ];
+
+    this.datas = firebaseProvider.ListData();
+
 }
     ionViewDidLoad() {
       console.log('ionViewDidLoad HomePage');
@@ -52,4 +52,36 @@ updateTitle(item){
   });
   prompt.present();
 }
+  addData(){
+    let prompt = this.alertCtrl.create({
+      title: 'Inserting New Data',
+    //  message: "",
+      inputs: [
+        {
+          name: 'Date',
+          placeholder: 'Enter a new date:'
+        },
+        {
+          name: 'Name',
+          placeholder: 'Enter a new name:'
+        },
+        {
+          name: 'Cell',
+          placeholder: 'Enter data in Cell #1:'
+        }
+      ],
+      buttons: [
+        {
+          text:'Cancel'
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            this.firebaseProvider.addData(data);
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
 }

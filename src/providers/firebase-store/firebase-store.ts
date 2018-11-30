@@ -15,4 +15,23 @@ export class FirebaseStoreProvider {
   updateTitle(id,data){
     this.afs.doc('/mains/' + id).update(data);
   }
+  ListData(){
+    return this.afs.collection('/datas').valueChanges();
+  }
+
+  addData(value){
+    console.log(value);
+    return new Promise<any>((resolve,reject) => {
+      this.afs.collection('/database').add({
+        date: parseInt(value.year),
+        name: (value.Name)
+      })
+      .then(
+        (res) => {
+          resolve(res)
+        },
+          err => reject(err)
+        )
+      })
+    }
 }
