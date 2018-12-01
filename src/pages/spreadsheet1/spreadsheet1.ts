@@ -10,6 +10,7 @@ import { Observable } from 'rxjs/rx';
   templateUrl: 'spreadsheet1.html'
 })
 export class Spreadsheet1Page {
+  columns: any;
   mains: Observable<any[]>;
   datas: Observable<any[]>;
   cells: any;
@@ -17,8 +18,10 @@ export class Spreadsheet1Page {
   item: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public firebaseProvider: FirebaseStoreProvider){
     this.mains = firebaseProvider.listTitle(); 
-
     this.datas = firebaseProvider.ListData();
+    this.cells = [1,2,3,4,5];
+    this.columns = ["A", "B", "C","D","E"];
+    this.items = {};
 
 }
     ionViewDidLoad() {
@@ -52,7 +55,7 @@ updateTitle(item){
   });
   prompt.present();
 }
-  addData(){
+ /* addData(){
     let prompt = this.alertCtrl.create({
       title: 'Inserting New Data',
     //  message: "",
@@ -83,5 +86,35 @@ updateTitle(item){
       ]
     });
     prompt.present();
+  }
+  */
+ editItem(item){ 
+  let prompt = this.alertCtrl.create({
+    title: 'Edit Item',
+    inputs: [{
+      name: 'name'
+    }],
+    buttons: [
+      {
+        text: 'Cancel'
+      },
+      {
+        text: 'Save',
+          handler: data => {
+            let index = this.items.indexOf(item);
+ 
+            if(index > -1){
+              this.items[index] = data.name;
+            }
+        }
+       }
+     ]
+   });
+ 
+   prompt.present();      
+}
+  dataTest(cell){
+    console.log(cell);
+    this.items[cell]="Test";
   }
 }

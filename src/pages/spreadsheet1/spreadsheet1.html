@@ -77,9 +77,24 @@
       <th class="columnrest">The ninth column example title
 
       </th>
+
       <th class="columnrest">The tenth column example title
     </tr>
-    <tr>
+    <tr *ngFor="let i of cells">
+      <td *ngFor="let j of columns">
+        <ion-item *ngIf="items[j+i] !== undefined">
+          {{items[j+i]}}
+        </ion-item>
+        <ion-item *ngIf="items[j+i] == undefined">sdf
+        {{j}}
+        {{i}}
+        <ion-buttons>
+            <button ion-button icon-only light (click)="dataTest(j+i)"><ion-icon name="md-arrow-dropright-circle"></ion-icon></button>
+        </ion-buttons>
+      </ion-item>
+      </td>       
+      </tr>   
+<!----   <tr>
       <td class="column">1
           <ion-buttons>
               <button ion-button icon-only light (click)="editrow"><ion-icon name="md-arrow-dropright-circle"></ion-icon></button>
@@ -90,7 +105,11 @@
       </td>
     </tr>
     <tr>
-      <td class="column">2</td>
+      <td class="column">2
+      </td>
+      <td *ngFor="let i of cells">
+          {{i}}       
+     </td>
     </tr>
     <tr>
       <td class="column">3</td>
@@ -115,6 +134,6 @@
     </tr>
     <tr>
       <td class="column">10</td>
-    </tr>
-  </table>
+    </tr> ----->
+  </table> 
 </ion-content>

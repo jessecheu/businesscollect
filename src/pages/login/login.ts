@@ -33,7 +33,7 @@ export class LoginPage {
       const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       console.log(result);
       if(result){
-      this.navCtrl.push('SettingspagePage');
+      this.navCtrl.push('Spreadsheet1Page');
       }
     }
   catch(e) {
