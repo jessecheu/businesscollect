@@ -18,6 +18,9 @@ export class FirebaseStoreProvider {
   ListData(){
     return this.afs.collection('/datas').valueChanges();
   }
+  updateData(id, data){
+    this.afs.doc('/database/' + id).update(data);
+  }
 
   addData(value){
     console.log(value);

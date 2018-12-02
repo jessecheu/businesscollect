@@ -30,7 +30,7 @@ page-spreadsheet1 {
     }
     .spreadsheet, th, td{
         padding: 1px;
-        background-color:#e74c3c;
+      //  background-color:#e74c3c;
         border: 1px solid black;
         border-collapse: collapse;   
         overflow: hidden;
@@ -57,6 +57,16 @@ page-spreadsheet1 {
         padding: 35px;
         background-color: #999999;
         
+    }
+    .datacells{
+        width: 200px;
+        height: 100px;
+        background-color: #6666;
+        overflow-wrap: break-word;
+        word-break: break-all;
+    }
+    .editButton{
+        background-color: #666666;
     }
     }
     

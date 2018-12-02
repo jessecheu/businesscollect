@@ -20,7 +20,7 @@ export class Spreadsheet1Page {
     this.mains = firebaseProvider.listTitle(); 
     this.datas = firebaseProvider.ListData();
     this.cells = [1,2,3,4,5];
-    this.columns = ["A", "B", "C","D","E"];
+    this.columns = ["A", "B", "C","D","E","F","G","H","I","J","K"];
     this.items = {};
 
 }
@@ -88,7 +88,8 @@ updateTitle(item){
     prompt.present();
   }
   */
- editItem(item){ 
+ editItem(cell){ 
+   console.log(cell);
   let prompt = this.alertCtrl.create({
     title: 'Edit Item',
     inputs: [{
@@ -101,20 +102,20 @@ updateTitle(item){
       {
         text: 'Save',
           handler: data => {
-            let index = this.items.indexOf(item);
- 
+            this.items[cell]= data.name;
+           this.firebaseProvider.updateData("data", {cell: data.name});
+          /*  let index = this.cells.indexOf(cell);
             if(index > -1){
-              this.items[index] = data.name;
-            }
-        }
+              this.cells[index] = data.name;
+            } */  
+         }
        }
      ]
    });
- 
    prompt.present();      
 }
-  dataTest(cell){
+/*   dataTest(cell){
     console.log(cell);
     this.items[cell]="Test";
-  }
+  } */ 
 }

@@ -40,58 +40,60 @@
 </p>
   <table class ="spreadsheet">
     <tr>
-      <th class="column00">Input DATA
+      <th class="columnrest">
           <ion-buttons>
               <button ion-button icon-only light (click)="addData()"><ion-icon name="md-add-circle"></ion-icon></button>
           </ion-buttons>
       </th>
-      <th class="columnrest">
-          <ion-item class="sheettitle" *ngFor="let data of datas | async">{{data.title}}          
+      <th class="columnrest">A
+      <!----<ion-item class="sheettitle" *ngFor="let data of datas | async">A          
             </ion-item> 
                     
-          <ion-buttons>
+         <ion-buttons>
               <button ion-button icon-only light (click)="adddata"><ion-icon name="md-arrow-dropup-circle"></ion-icon></button>
-          </ion-buttons>
+          </ion-buttons> ---->
       </th>
-      <th class="columnrest">The second column example title
+      <th class="columnrest">B
         
       </th>
-      <th class="columnrest">The third column example title
+      <th class="columnrest">C
 
       </th>
-      <th class="columnrest">The fourth column example title
+      <th class="columnrest">D
 
       </th>
-      <th class="columnrest">The fifth column example title 
+      <th class="columnrest">E 
 
       </th>
-      <th class="columnrest">The sixth column example title
+      <th class="columnrest">F
 
       </th>
-      <th class="columnrest">The seventh column example title
+      <th class="columnrest">G
 
       </th>     
-      <th class="columnrest">The eighth column example title
+      <th class="columnrest">H
 
       </th>
-      <th class="columnrest">The ninth column example title
+      <th class="columnrest">I
 
       </th>
 
-      <th class="columnrest">The tenth column example title
+      <th class="columnrest">J
     </tr>
     <tr *ngFor="let i of cells">
       <td *ngFor="let j of columns">
-        <ion-item *ngIf="items[j+i] !== undefined">
+        <ion-item class="datacells" *ngIf="items[j+i] !== undefined">
           {{items[j+i]}}
         </ion-item>
-        <ion-item *ngIf="items[j+i] == undefined">sdf
-        {{j}}
-        {{i}}
-        <ion-buttons>
-            <button ion-button icon-only light (click)="dataTest(j+i)"><ion-icon name="md-arrow-dropright-circle"></ion-icon></button>
-        </ion-buttons>
-      </ion-item>
+        <ion-item class="datacells" *ngIf="items[j+i] == undefined">
+        <p>{{j}}{{i}}</p>
+        
+        </ion-item>
+      <ion-item class="editButton">
+      <ion-buttons>
+          <button ion-button icon-only light (click)="editItem(j+i)"><ion-icon name="md-arrow-dropright-circle"></ion-icon></button>
+      </ion-buttons>   
+    </ion-item> 
       </td>       
       </tr>   
 <!----   <tr>
@@ -114,7 +116,7 @@
     <tr>
       <td class="column">3</td>
     </tr>
-    <tr>
+   <tr>
       <td class="column">4</td>
     </tr>
     <tr>
@@ -136,4 +138,5 @@
       <td class="column">10</td>
     </tr> ----->
   </table> 
+
 </ion-content>
