@@ -1,9 +1,4 @@
-<!--
-  Generated template for the LoginPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar hideBackButton *navbar>
@@ -20,12 +15,12 @@
   <br>
 
 <ion-item>
-  <ion-label floating>Email Addresses</ion-label>
+  <ion-label floating>Email Addresses (ex.) test@test.com</ion-label>
   <ion-input type="text" [(ngModel)]="user.email"></ion-input>
 </ion-item>
 
 <ion-item>
-    <ion-label floating>Password</ion-label>
+    <ion-label floating>Password (ex.) test123</ion-label>
     <ion-input type="password" [(ngModel)]="user.password"></ion-input>
   </ion-item>
 
@@ -33,5 +28,10 @@
 <button ion-button (click)="login(user)">Login</button>
 <button ion-button color="dark" (click)="register()">register</button>
 
+<br>
+<button ion-button color="dark" icon-left (click)="loginWithGoogle()">
+  <ion-icon name="logo-google"></ion-icon>
+  Login with Google
+</button>
 
 </ion-content>

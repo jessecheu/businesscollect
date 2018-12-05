@@ -19,7 +19,7 @@
             this.afAuth.authState.subscribe(data => {
               if(data && data.email && data && data.uid) {
               this.toast.create({
-                message: 'Welcome to the DATABASE, ${data.email}',
+           //     message: 'Welcome to the DATABASE, ${data.email}',
                 duration: 3000,
               }).present();
             }

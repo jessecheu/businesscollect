@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from "../../models/user";
 import { AngularFireAuth} from 'angularfire2/auth'; 
 
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -48,6 +49,9 @@ export class LoginPage {
 
   cancel() {
     this.navCtrl.push('LoginPage');
+  }
+
+  loginWithGoogle() {
   }
 
 }

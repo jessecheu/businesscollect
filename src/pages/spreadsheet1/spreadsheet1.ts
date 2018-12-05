@@ -19,7 +19,7 @@ export class Spreadsheet1Page {
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public firebaseProvider: FirebaseStoreProvider){
     this.mains = firebaseProvider.listTitle(); 
     this.datas = firebaseProvider.ListData();
-    this.cells = [1,2,3,4,5];
+    this.cells = [1,2,3,4,5,6,7,8,9];
     this.columns = ["A", "B", "C","D","E","F","G","H","I","J","K"];
     this.items = {};
 
