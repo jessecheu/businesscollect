@@ -4,24 +4,38 @@ import { AlertController } from 'ionic-angular';
 import { FirebaseStoreProvider } from '../../providers/firebase-store/firebase-store'
 import { AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/rx';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { User } from 'firebase';
 @IonicPage()
 @Component({
   selector: 'page-spreadsheet1',
   templateUrl: 'spreadsheet1.html'
 })
 export class Spreadsheet1Page {
+  
+  user: User;
   columns: any;
   mains: Observable<any[]>;
   datas: Observable<any[]>;
   cells: any;
   items: any;
   item: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public firebaseProvider: FirebaseStoreProvider){
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public firebaseProvider: FirebaseStoreProvider,
+    private afAuth: AngularFireAuth,){
     this.mains = firebaseProvider.listTitle(); 
     this.datas = firebaseProvider.ListData();
     this.cells = [1,2,3,4,5,6,7,8,9];
     this.columns = ["A", "B", "C","D","E","F","G","H","I","J","K"];
     this.items = {};
+    this.afAuth.authState.subscribe(
+      user => {
+        this.user = user;
+        console.log(user);
+        if(user != null){
+        this.firebaseProvider.getOrCreateUserProfile(user.uid)
+        }
+      }
+    )
 
 }
     ionViewDidLoad() {
@@ -103,7 +117,7 @@ updateTitle(item){
         text: 'Save',
           handler: data => {
             this.items[cell]= data.name;
-           this.firebaseProvider.updateData("data", {cell: data.name});
+           this.firebaseProvider.updateData(this.user.uid, {cell: data.name});
           /*  let index = this.cells.indexOf(cell);
             if(index > -1){
               this.cells[index] = data.name;
@@ -118,4 +132,7 @@ updateTitle(item){
     console.log(cell);
     this.items[cell]="Test";
   } */ 
+  logout(){
+    this.afAuth.auth.signOut();
+  }
 }

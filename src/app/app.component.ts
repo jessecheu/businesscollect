@@ -5,17 +5,36 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { AngularFireAuth} from 'angularfire2/auth'; 
+
+import { Spreadsheet1Page } from '../pages/spreadsheet1/spreadsheet1';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = "LoginPage";
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private afAuth: AngularFireAuth) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+
+
+  this.afAuth.authState.subscribe(
+    user => {
+
+      if (user) {
+        this.rootPage = Spreadsheet1Page;
+      } else {
+        this.rootPage = LoginPage;
+      }
+    },
+    () => {
+      this.rootPage = LoginPage;
+    }
+  );
   }
 }
 

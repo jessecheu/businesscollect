@@ -14,6 +14,11 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environment/environment';
 
+import { Spreadsheet1Page } from '../pages/spreadsheet1/spreadsheet1';
+import { Spreadsheet1PageModule } from '../pages/spreadsheet1/spreadsheet1.module';
+import { LoginPageModule } from '../pages/login/login.module';
+import { LoginPage } from '../pages/login/login';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -25,11 +30,15 @@ import { environment } from '../environment/environment';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    Spreadsheet1PageModule,
+    LoginPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    Spreadsheet1Page,
+    LoginPage,
   ],
   providers: [
     StatusBar,
