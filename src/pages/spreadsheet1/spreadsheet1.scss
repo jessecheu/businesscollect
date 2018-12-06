@@ -3,14 +3,14 @@ page-spreadsheet1 {
         background-color:#f1c40f; 
     }*/
     .sheettitle{
-        background-color: #e67e22;
+        background-color: #6666;
     }
     .settings{
-        background-color: #f39c12;
+      //  background-color: #f39c12;
         position:absolute; right:5px;
     }
     .renamesheettitle{
-        background-color: #f39c12;
+       // background-color: #f39c12;
         position:float; left:224px;
     }
     .createsheets{
@@ -57,6 +57,12 @@ page-spreadsheet1 {
         text-align: center;
         padding: 35px;
         background-color: #999999;
+    .topleftcorner{
+        width: 350px;
+        text-align: center;
+        padding: 35px;
+        background-color: rgb(185, 170, 170);       
+    }
         
     }
     .datacells{
@@ -68,6 +74,11 @@ page-spreadsheet1 {
     }
     .editButton{
         background-color: #666666;
+    }
+    .rownumb{
+        font-weight:bold;
+        text-align: center;
+        background-color: #999999;
     }
     }
     

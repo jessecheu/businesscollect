@@ -20,6 +20,7 @@ export class Spreadsheet1Page {
   cells: any;
   items: any;
   item: any;
+  data: Observable<any>;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public firebaseProvider: FirebaseStoreProvider,
     private afAuth: AngularFireAuth,){
     this.mains = firebaseProvider.listTitle(); 
@@ -32,7 +33,17 @@ export class Spreadsheet1Page {
         this.user = user;
         console.log(user);
         if(user != null){
-        this.firebaseProvider.getOrCreateUserProfile(user.uid)
+        this.data = this.firebaseProvider.getOrCreateUserProfile(user.uid)
+        this.data.subscribe(data =>
+          {
+            this.items = {};
+            for( var k in data){
+              this.items[k]=data[k]
+            }
+        /*    data.map(fav => {
+
+            }) */
+          })
         }
       }
     )
@@ -52,7 +63,7 @@ updateTitle(item){
       {
         name: 'title',
         placeholder: 'Title',
-        value: item.title //<<Cannot read property 'title' of undefined
+        value: item.id //<<Cannot read property 'title' of undefined
       }
     ],
     buttons: [
@@ -116,8 +127,10 @@ updateTitle(item){
       {
         text: 'Save',
           handler: data => {
-            this.items[cell]= data.name;
-           this.firebaseProvider.updateData(this.user.uid, {cell: data.name});
+            var info = {}
+            info [cell] = data.name
+           this.firebaseProvider.updateData(this.user.uid, info);
+
           /*  let index = this.cells.indexOf(cell);
             if(index > -1){
               this.cells[index] = data.name;
@@ -133,6 +146,24 @@ updateTitle(item){
     this.items[cell]="Test";
   } */ 
   logout(){
-    this.afAuth.auth.signOut();
+    let prompt = this.alertCtrl.create({
+   /*   title: 'LOGOUT',
+      inputs: [{
+        name: 'name'
+      }], */
+      buttons: [
+        {
+          text: 'Cancel'
+        }, 
+        {  
+          text: 'LOGOUT',
+            handler: data => {
+              this.afAuth.auth.signOut();
+              this.navCtrl.push("LoginPage");
+           }
+         }
+       ]
+     });
+     prompt.present();      
   }
 }

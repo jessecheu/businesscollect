@@ -3,6 +3,7 @@
         import { HomePage } from '../home/home';
         import { Spreadsheet1Page } from '../spreadsheet1/spreadsheet1';
         import { AngularFireAuth } from 'angularfire2/auth';
+        import { AlertController } from 'ionic-angular';
         @IonicPage()
         @Component({
           selector: 'page-settingspage',
@@ -12,7 +13,8 @@
 
           constructor(
             private afAuth: AngularFireAuth, private toast: ToastController,
-            public navCtrl: NavController, public navParams: NavParams) {
+            public navCtrl: NavController, public navParams: NavParams,
+            public alertCtrl: AlertController) {
             }
 
           ionViewDidLoad() {
@@ -32,10 +34,28 @@
             }
           })
         }
-          
-
-            openHome(){
-              this.navCtrl.push('Spreadsheet1Page');  
-            }
-          
+       openHome(){
+        this.navCtrl.push('Spreadsheet1Page');  
+      }
+      logout(){
+        let prompt = this.alertCtrl.create({
+       /*   title: 'LOGOUT',
+          inputs: [{
+            name: 'name'
+          }], */
+          buttons: [
+            {
+              text: 'Cancel'
+            }, 
+            {  
+              text: 'LOGOUT',
+                handler: data => {
+                  this.afAuth.auth.signOut();
+                  this.navCtrl.push('LoginPage');
+               }
+             }
+           ]
+         });
+         prompt.present();      
+      }          
 }

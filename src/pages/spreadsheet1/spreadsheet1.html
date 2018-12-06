@@ -33,9 +33,6 @@
        </ion-buttons>       
 </div>
 
-<p>
-   
-</p>
   <table class ="spreadsheet">
     <tr>
       <th class="columnrest">
@@ -79,6 +76,9 @@
       <th class="columnrest">J
     </tr>
     <tr *ngFor="let i of cells">
+      <td class="rownumb">
+        {{i}}
+      </td>
       <td *ngFor="let j of columns">
         <ion-item class="datacells" *ngIf="items[j+i] !== undefined">
           {{items[j+i]}}
@@ -136,7 +136,13 @@
       <td class="column">10</td>
     </tr> ----->
   </table> 
+  <br>
+  <br>
   <ion-buttons class="settings">
-    <button ion-button icon-only (click)="logout()"><ion-icon name="ios-settings-outline"></ion-icon></button>
+    <button ion-button icon-only (click)="logout()">
+      Logout
+    </button>
 </ion-buttons>
+<br>
+<br>
 </ion-content>
