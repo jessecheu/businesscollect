@@ -138,7 +138,9 @@ updateTitle(item){
             var info = {}
             info [cell] = data.name
            this.firebaseProvider.updateData(this.user.uid, info);
-
+            if(this.user.uid==null){
+              this.navCtrl.push('LoginPage');
+            }
           /*  let index = this.cells.indexOf(cell);
             if(index > -1){
               this.cells[index] = data.name;

@@ -28,7 +28,7 @@
               }).present();
             }
             else {
-              this.navCtrl.setRoot('Login')
+              this.navCtrl.setRoot(LoginPage);
               this.toast.create({
                 message: 'Incorrect email or password',
                 duration: 3000
