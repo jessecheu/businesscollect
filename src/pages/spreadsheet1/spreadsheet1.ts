@@ -6,6 +6,9 @@ import { AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/rx';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from 'firebase';
+import { NgIf } from '@angular/common';
+import { first } from 'rxjs/operators';
+
 @IonicPage()
 @Component({
   selector: 'page-spreadsheet1',
@@ -44,6 +47,9 @@ export class Spreadsheet1Page {
 
             }) */
           })
+        }
+        else{
+          this.navCtrl.push('LoginPage');
         }
       }
     )
@@ -127,6 +133,8 @@ updateTitle(item){
       {
         text: 'Save',
           handler: data => {
+            // NgIf(this.user.uid==null)
+            console.log(this.isLoggedIn());
             var info = {}
             info [cell] = data.name
            this.firebaseProvider.updateData(this.user.uid, info);
@@ -165,5 +173,8 @@ updateTitle(item){
        ]
      });
      prompt.present();      
+  }
+  isLoggedIn(){
+    return this.afAuth.authState.pipe(first()).toPromise();
   }
 }

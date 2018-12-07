@@ -4,6 +4,8 @@
         import { Spreadsheet1Page } from '../spreadsheet1/spreadsheet1';
         import { AngularFireAuth } from 'angularfire2/auth';
         import { AlertController } from 'ionic-angular';
+        import { LoginPage } from '../login/login';
+
         @IonicPage()
         @Component({
           selector: 'page-settingspage',
@@ -37,25 +39,30 @@
        openHome(){
         this.navCtrl.push('Spreadsheet1Page');  
       }
+      // logout(){
+      //   let prompt = this.alertCtrl.create({
+      // // /*    title: 'LOGOUT',
+      // //     inputs: [{
+      // //       name: 'name'
+      // //     }], */
+      //     buttons: [
+      //       {
+      //         text: 'Cancel'
+      //       }, 
+      //       {  
+      //         text: 'LOGOUT',
+      //           handler: data => {
+      //             this.afAuth.auth.signOut();
+      //              this.navCtrl.push(LoginPage);
+      //           //   console.log(LoginPage);
+      //          }
+      //        }
+      //      ]
+      //    });
+      //    prompt.present();      
+      // }          
       logout(){
-        let prompt = this.alertCtrl.create({
-       /*   title: 'LOGOUT',
-          inputs: [{
-            name: 'name'
-          }], */
-          buttons: [
-            {
-              text: 'Cancel'
-            }, 
-            {  
-              text: 'LOGOUT',
-                handler: data => {
-                  this.afAuth.auth.signOut();
-                  this.navCtrl.push('LoginPage');
-               }
-             }
-           ]
-         });
-         prompt.present();      
-      }          
+        this.afAuth.auth.signOut();        
+        this.navCtrl.push(LoginPage);    
+      }
 }
