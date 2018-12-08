@@ -2,7 +2,7 @@
 <ion-header>
   <ion-navbar hideBackButton>
     <ion-title class="headertitle">
-     <b>DATABASE_NAME <br> Storage & Organizer</b>
+     <b>DATABASE_NAME <br> Storage <!---- & Organizer --></b>
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -21,25 +21,25 @@
                </ion-buttons>
              </label>
             -->
-  <ion-list class="sheettitle">
+ <!---- <ion-list class="sheettitle">
       <ion-item class="sheettitle" *ngFor="let main of mains | async">{{main.title}}         
     </ion-item>        
-  </ion-list>  
+  </ion-list>  --->
       <ion-buttons class="settings">
           <button ion-button icon-only (click)="openSettings()"><ion-icon name="ios-settings-outline"></ion-icon></button>
       </ion-buttons>
-        <ion-buttons class="renamesheettitle">
+    <!----    <ion-buttons class="renamesheettitle">
             <button ion-button icon-only light (click)="updateTitle(title)"><ion-icon name="ios-brush-outline"></ion-icon></button>
-       </ion-buttons>       
+       </ion-buttons>   -->    
 </div>
 
   <table class ="spreadsheet">
     <tr>
-      <th class="columnrest">
+    <!----  <th class="columnrest">
          <ion-buttons>
               <button ion-button icon-only light (click)="addData()"><ion-icon name="md-add-circle"></ion-icon></button>
-          </ion-buttons>
-      </th> 
+          </ion-buttons> 
+      </th> -->
       <th class="columnrest">A
       <!----<ion-item class="sheettitle" *ngFor="let data of datas | async">A          
             </ion-item> 
@@ -145,5 +145,5 @@
 </ion-buttons>
 <br>
 <br>
+
 </ion-content>
-console.log(this.userid);
